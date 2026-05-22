@@ -114,14 +114,14 @@ h1 {
 }
 
 .btn-create {
-  background: #0f0fb2; /* สีเขียว (สามารถเปลี่ยนสีได้ตามต้องการครับ) */
+  background: #0f0fb2; 
   color: white;
   border: none;
   border-radius: 5px;
   padding: 8px 16px;
   cursor: pointer;
   font-size: 14px;
-  margin-right: 10px; /* เพิ่มระยะห่างด้านขวา ไม่ให้ติดกับปุ่ม Cancel */
+  margin-right: 10px; 
 }
 
 .btn-creating {
@@ -143,6 +143,7 @@ background: #95a5a6;
   padding: 8px 16px;
   cursor: pointer; 
   font-size: 14px;
+  margin-left: 10px;
 }
 
 .btn-delete{
