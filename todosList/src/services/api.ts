@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "https://todo-fullstack-app-7pw1.onrender.com";
 
 export interface Todo {
     id: number;
@@ -13,25 +13,25 @@ export const getTodos = async (): Promise<Todo[]> => {
 };
 
 export const createTodo = async (text: string): Promise<Todo> => {
-    const report = await fetch(`${API_BASE_URL}/todos`,{
+    const report = await fetch(`${API_BASE_URL}/todos`, {
         method: "POST",
-        headers: {"content-type": "application/json"},
-        body: JSON.stringify({text, completed: false}),
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ text, completed: false }),
     });
     return report.json();
 };
 
 export const updateTodo = async (id: number, text: string, completed: boolean): Promise<Todo> => {
-    const report = await fetch(`${API_BASE_URL}/todos/${id}`,{
+    const report = await fetch(`${API_BASE_URL}/todos/${id}`, {
         method: "PUT",
-        headers: {"content-type": "application/json"},
-        body: JSON.stringify({text, completed}),
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ text, completed }),
     });
     return report.json();
 }
 
 export const deleteTodo = async (id: number): Promise<void> => {
-    const report = await fetch(`${API_BASE_URL}/todos/${id}`,{
+    const report = await fetch(`${API_BASE_URL}/todos/${id}`, {
         method: "DELETE",
 
     });
