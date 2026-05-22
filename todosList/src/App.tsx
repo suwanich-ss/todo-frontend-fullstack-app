@@ -112,7 +112,7 @@ function App() {
                             value={newTodoText} 
                             onChange={(e) => setNewTodoText(e.target.value)}/>
                             <div className="modal_actions">
-                                <button className={creating ? 'btn-creating' : 'btn-creating'} onClick={handleCreate} disabled={creating}>
+                                <button className={creating ? 'btn-creating' : 'btn-create'} onClick={handleCreate} disabled={creating}>
                                     {creating ? 'Creating...' : 'Create'}
                                 </button>
                                 <button className="btn-Cancel" onClick={handleCloseModal}>

@@ -113,6 +113,17 @@ h1 {
     justify-content: center;
 }
 
+.btn-create {
+  background: #0f0fb2; /* สีเขียว (สามารถเปลี่ยนสีได้ตามต้องการครับ) */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px; /* เพิ่มระยะห่างด้านขวา ไม่ให้ติดกับปุ่ม Cancel */
+}
+
 .btn-creating {
   background: #3498db;
   color: white;
@@ -121,6 +132,7 @@ h1 {
   padding: 8px 16px; 
   cursor: not-allowed; 
   font-size: 14px;
+  margin-right: 10px;
 }
 
 .btn-Cancel {
