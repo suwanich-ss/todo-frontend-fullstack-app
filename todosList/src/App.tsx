@@ -9,6 +9,11 @@ function App() {
     const [error, setError] = useState<string | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [newTodoText, setNewTodoText] = useState('');
+    const [creating, setCreating] = useState(false);
+
+
+
+    
 
     useEffect(() => {
         fetchTodos();
@@ -29,6 +34,8 @@ function App() {
     };
 
     const handleCreate = async () => {
+        if (creating) return; // Prevent multiple clicks
+        setCreating(true);
         if (newTodoText && newTodoText.trim() !== '') {
             try{
                 await createTodo(newTodoText.trim());
@@ -37,8 +44,9 @@ function App() {
                 fetchTodos();
             } catch (err) {
                 setError('Failed to create todo');
+            } finally {
+                setCreating(false);
             }
-
         }
     };
 
@@ -104,8 +112,12 @@ function App() {
                             value={newTodoText} 
                             onChange={(e) => setNewTodoText(e.target.value)}/>
                             <div className="modal_actions">
-                                <button className="btn" onClick={handleCreate}>Create</button>
-                                <button className="btn" onClick={handleCloseModal}>Cancel</button>
+                                <button className={`btn ${creating ? 'btn-creating' : ''}`} onClick={handleCreate} disabled={creating}>
+                                    {creating ? 'Creating...' : 'Create'}
+                                </button>
+                                <button className="btn btn-Cancel" onClick={handleCloseModal}>
+                                    Cancel
+                                </button>
                             </div>
 
                         </div>
