@@ -113,6 +113,26 @@ h1 {
     justify-content: center;
 }
 
+.btn-creating {
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px; 
+  cursor: not-allowed; 
+  font-size: 14px;
+}
+
+.btn-Cancel {
+background: #95a5a6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer; 
+  font-size: 14px;
+}
+
 .btn-delete{
   background: #e53e3e;
   color: white;
